@@ -1,7 +1,7 @@
 var dummyjson = require('dummy-json')
   , fs = require('fs');
 
-var template = '{"users":[{{#repeat 300}}' +
+var template = '{"users":[{{#repeat 1000}}' +
   '{' +
     '"name": "{{firstName}} {{lastName}}",' +
     '"email": "{{email}}",' +
@@ -21,7 +21,7 @@ var myHelpers = {
     } else if (randomVal < 0.6) {
       return 'Разработчики';
     } else if (randomVal < 0.8) {
-      return 'Тестировкищи';
+      return 'Тестировщики';
     } else {
       return null;
     }

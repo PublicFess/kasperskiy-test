@@ -4,6 +4,23 @@ div
   button(ng-click='chooseView("table")') Таблица
   button(ng-click='chooseView("tiles")') Плитки
   button(ng-click='chooseView("lists")') Списки
+  button(ng-click='sort("name")')
+    span Имя
+    i.fa.fa-chevron-up(ng-if='sorting.type=="name" && sorting.direction == "DESC"')
+    i.fa.fa-chevron-down(ng-if='sorting.type=="name" && sorting.direction == "ASC"')
+  button(ng-click='sort("email")')
+    span Email
+    i.fa.fa-chevron-up(ng-if='sorting.type=="email" && sorting.direction == "DESC"')
+    i.fa.fa-chevron-down(ng-if='sorting.type=="email" && sorting.direction == "ASC"')
+  button(ng-click='sort("phone")')
+    span Телефон
+    i.fa.fa-chevron-up(ng-if='sorting.type=="phone" && sorting.direction == "DESC"')
+    i.fa.fa-chevron-down(ng-if='sorting.type=="phone" && sorting.direction == "ASC"')
+  button(ng-hide='view == "lists"' ng-click='sort("group")')
+    span Группа
+    i.fa.fa-chevron-up(ng-if='sorting.type=="group" && sorting.direction == "DESC"')
+    i.fa.fa-chevron-down(ng-if='sorting.type=="group" && sorting.direction == "ASC"')
+
 
 include usersList/_table
 include usersList/_tiles

@@ -1,4 +1,22 @@
 table(ng-if='view == "table"').data-table
+  thead
+    tr
+      td(ng-click='sort("name")')
+        span Имя
+        i.fa.fa-chevron-up(ng-if='sorting.type=="name" && sorting.direction == "DESC"')
+        i.fa.fa-chevron-down(ng-if='sorting.type=="name" && sorting.direction == "ASC"')
+      td(ng-click='sort("email")')
+       span Email
+       i.fa.fa-chevron-up(ng-if='sorting.type=="email" && sorting.direction == "DESC"')
+       i.fa.fa-chevron-down(ng-if='sorting.type=="email" && sorting.direction == "ASC"')
+      td(ng-click='sort("phone")') 
+        span Телефон
+        i.fa.fa-chevron-up(ng-if='sorting.type=="phone" && sorting.direction == "DESC"')
+        i.fa.fa-chevron-down(ng-if='sorting.type=="phone" && sorting.direction == "ASC"')
+      td(ng-click='sort("group")') 
+        span Группа
+        i.fa.fa-chevron-up(ng-if='sorting.type=="group" && sorting.direction == "DESC"')
+        i.fa.fa-chevron-down(ng-if='sorting.type=="group" && sorting.direction == "ASC"')
   tr(ng-repeat='user in users')
     td(ng-bind='::user.name')
     td(ng-bind='::user.email')

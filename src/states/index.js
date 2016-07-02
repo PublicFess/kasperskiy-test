@@ -24,7 +24,7 @@ module.exports = function($stateProvider) {
     },
     controller: ['$scope', 'users', function($scope, users) {
       $scope.users = users;
-      $scope.view = 'lists';
+      $scope.view = 'table';
 
       $scope.lists = [];
       $scope.groups = _.groupBy(users, 'group');
@@ -42,6 +42,52 @@ module.exports = function($stateProvider) {
         $scope.view = view;
       };
 
+      $scope.sorting = {
+        type: 'name',
+        direction: 'ASC'
+      };
+
+      $scope.sort = function(type) {
+        if ($scope.sorting.type == type) {
+          $scope.changeSortDirection();
+        } else {
+          $scope.sorting.type = type;
+          $scope.sorting.direction = 'ASC';
+        }
+        if ($scope.view == 'lists') {
+          $scope.sortLists();
+        } else {
+          $scope.sortUsers();
+        }
+      };
+
+      $scope.sortLists = function() {
+        $scope.lists.forEach(function(list) {
+          list.users = _.sortBy(list.users, $scope.sorting.type);
+          if ($scope.sorting.direction == 'DESC') {
+            list.users = list.users.reverse();
+          }
+        });
+      };
+
+      $scope.sortUsers = function() {
+        $scope.users = _.sortBy(users, $scope.sorting.type);
+        if ($scope.sorting.direction == 'DESC') {
+          $scope.users = $scope.users.reverse();
+        }
+      };
+
+      $scope.changeSortDirection = function() {
+        $scope.sorting.direction = $scope.sorting.direction == 'ASC' ? 'DESC' : 'ASC';
+      };
+
+      $scope.$watch('view', function() {
+        if ($scope.view == 'lists') {
+          $scope.sortLists();
+        } else {
+          $scope.sortUsers();
+        }
+      });
     }]
   });
 };
