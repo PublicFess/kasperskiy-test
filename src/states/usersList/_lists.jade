@@ -1,0 +1,6 @@
+div.data-lists
+  div.data-list(ng-repeat='list in lists')
+    div.data-list-title(ng-bind='::list.title')
+    .data-list-body
+      div.data-list-item(ng-repeat='user in list.users')
+        div.data-list-item-name(ng-bind='::user.name')

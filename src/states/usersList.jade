@@ -1,0 +1,10 @@
+h1 Список пользователей
+
+div
+  button(ng-click='chooseView("table")') Таблица
+  button(ng-click='chooseView("tiles")') Плитки
+  button(ng-click='chooseView("lists")') Списки
+
+include usersList/_table
+include usersList/_tiles
+include usersList/_lists

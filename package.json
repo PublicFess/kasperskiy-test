@@ -1,0 +1,34 @@
+{
+  "name": "kaspersky-test",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.7.1",
+    "dummy-json": "^1.0.1",
+    "express": "^4.14.0",
+    "lodash": "^4.13.1"
+  },
+  "author": "Nikita Shuklin",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "*",
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-batch": "^1.0.5",
+    "gulp-watch": "^4.3.5",
+    "gulp-autoprefixer": "*",
+    "gulp-browserify": "*",
+    "gulp-data": "*",
+    "gulp-imagemin": "*",
+    "gulp-jade": "*",
+    "gulp-stylus": "*",
+    "include-all": "~0.1.3",
+    "jade": "^1.11.0",
+    "nib": "*",
+    "chokidar": "*",
+    "run-sequence": "^1.1.4"
+  }
+}

@@ -1,0 +1,6 @@
+table(ng-if='view == "table"').data-table
+  tr(ng-repeat='user in users')
+    td(ng-bind='::user.name')
+    td(ng-bind='::user.email')
+    td(ng-bind='::user.phone')
+    td(ng-bind='::user.group')

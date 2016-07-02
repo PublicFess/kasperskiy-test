@@ -1,0 +1,7 @@
+div(ng-if='view == "tiles"').data-tiles
+  div.tile(ng-repeat='user in users')
+    div.tile-name(ng-bind='::user.name')
+    div.tile-avatar
+      i.fa.fa-user
+    div.tile-phone(ng-bind='::user.phone')
+    div.tile-group(ng-bind='::user.group')
