@@ -1,0 +1,81 @@
+<DOCTYPE html="html"></DOCTYPE>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Тест</title>
+    <style>
+      .form-controls {
+        width: 100%;
+      }
+
+      .form-controls:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+
+      .form-input-wrap {
+        overflow: hidden;
+        padding-right: 2px;
+      }
+
+      .form-input-wrap input {
+        width: 100%;
+        padding: 8px 0;
+      }
+
+      [dir="rtl"] .form-button-wrap {
+        float: left
+      }
+
+      .form-button-wrap {
+        float: right;
+      }
+
+      [dir="rtl"] .form-button-wrap {
+        float: left
+      }
+
+      .form-button-wrap button{
+        margin-left: 13px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: 1px solid #999;
+        background: #ccc;
+        background: linear-gradient(to bottom, #fff, #ccc);
+      }
+
+      [dir="rtl"] .form-button-wrap button {
+        margin-right: 13px;
+        margin-left: 0px
+      }
+
+      .example {
+        color: #aaa;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+
+      [dir='rtl'] *{
+
+        unicode-bidi: bidi-override;
+      }
+    </style>
+  </head>
+  <body dir='rtl'>
+    <form>
+      <div class="form-controls">
+        <div class="form-button-wrap">
+          <button type="button" name="button">Send code</button>
+        </div>
+        <div class="form-input-wrap">
+          <input type="text" name="name" value="">
+        </div>
+
+      </div>
+      <div class='example'>Example: 72A22EF8-8766-4359-3978-EBAAC445687A</div>
+    </form>
+  </body>
+</html>
